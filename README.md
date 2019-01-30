@@ -95,7 +95,7 @@ Because of immutability of the `ViewModel` and the fact that given the same `Mod
 
 ## Drawbacks of Immutable ViewModels
 
-There are few cases where immutability of the `ViewModel` might not work.
+There are a few cases where immutability of the `ViewModel` might not work.
 One is forms that use `UITableView`, since tableView's cells are reused the state can't be kept in the `View` or it will be lost once the cell is reused. However in our experience is better to not use `UITableView` for building forms and reusing cells cause more troubles than gains, `UIStackView` is a better choice for simple forms.
 Another case is with animations, this need to be solved case by case by escaping a bit from immutability.  
 At Verse for example to properly animate the like button of a cell we had to keep the `liked` state of each Feed entry mutable and using callbacks to update the cell state.  
