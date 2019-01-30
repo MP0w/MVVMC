@@ -22,7 +22,7 @@ Other than this, it introduces the concepts of `Interactor` and `Coordinator` to
 ### Model
 
 `Model`s are entities that represent the data behind the business logic. In order to have immutable `ViewModel`s the model needs to be immutable as well, preferably using value types when possible.
-The `Model` doesn't contain any logic but is just the input of a `ViewModel` that transforms the model into what a `View` needs.
+The `Model` doesn't contain any logic as it is just the input of a `ViewModel` that transforms the model into what a `View` needs.
 
 ### View
 
