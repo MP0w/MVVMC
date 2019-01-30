@@ -1,6 +1,6 @@
 MVVMÇ (MVVM Calçot) is an implementation of MVVM influenced by VIPER. Basically VIPER with MVVM names.  
 The most important concept of MVVMÇ is that implements MVVM with **immutable** ViewModels, this helps to write correct and testable code with minor complexity.  
-Other than this it introduces `Interactor` and `Coordinator` to MVVM.
+Other than this, it introduces the concepts of `Interactor` and `Coordinator` to MVVM.
 
 ## Content
 
