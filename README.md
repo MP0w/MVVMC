@@ -26,7 +26,7 @@ The `Model` doesn't contain any logic as it is just the input of a `ViewModel` t
 
 ### View
 
-The `View` is what the user actually see, usually a `UIView` or `UIViewController`. `View` should never have any logic but instead use whaveter comes from the `ViewModel` directly without manipulation. Because `ViewModel`s should be immutable the `View` might have to hold the state.
+The `View` is what get eventually presented on screen, usually a `UIView` or `UIViewController`. `View` should never have any logic but instead use directly whatever comes from the `ViewModel` without manipulation. Because `ViewModel`s should be immutable the `View` might have to hold the state.
 For example, a `UISwitch`, is already holding the state `on/off` so there is no need to replicate it in the `ViewModel` or the `Model` with the risk of inconsistencies. Then the `View` will pass the value to the `ViewModel` whenever needed.
 Let's say a `ViewModel` needs to provide a `String` based on the switch value.  
 
