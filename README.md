@@ -47,7 +47,7 @@ There are few cases where this is not possible ([Drawbacks of Immutable ViewMode
 
 ### ViewModel
 
-The ViewModel contains all the business logic and the presentation logic. It transforms the Model into what the View should display. In MVVMÇ the goal is to have always immutable ViewModels because it makes it really easy to tests them. Given a Model you will always have the exact same output.  
+The `ViewModel` contains all the business logic and the presentation logic. It transforms the `Model` into what the `View` should display. In MVVMÇ the goal is to have always immutable `ViewModel`s because it makes it really easy to tests them. Given a `Model` you will always have the exact same output.  
 The ViewModel forwards updates of the Model or other actions to the `Interactor` and forwards navigation to the `Coordinator`. The `View` never navigates or use the `Interactor` or `Coordinator` directly, but instead it delegates to the ViewModel that then dispatches it as necessary.
 The [biding](#binding) between the `View` and the `Interactor` takes care of replacing the `ViewModel` whenever the `Model` changes.
 
