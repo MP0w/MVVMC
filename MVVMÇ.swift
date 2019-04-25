@@ -28,3 +28,15 @@ extension Interactor {
         }
     }
 }
+
+class Coordinator {
+    private weak var _rootViewController: UIViewController?
+    
+    var rootViewController: UIViewController {
+        return _rootViewController ?? createRootViewController()
+    }
+
+    func createRootViewController() -> UIViewController {
+        fatalError("createRootViewController not implemented")
+    }
+}

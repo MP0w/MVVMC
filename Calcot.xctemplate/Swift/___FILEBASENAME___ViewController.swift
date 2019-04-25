@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___: BaseViewController, UpdateableView {
+class ___FILEBASENAMEASIDENTIFIER___: UIViewController, UpdateableView {
 
     private var viewModel: ___VARIABLE_productName___ViewModel
 
