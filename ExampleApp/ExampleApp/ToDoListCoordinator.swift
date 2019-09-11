@@ -8,18 +8,14 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class ToDoListCoordinator: Coordinator {
 
     override func createRootViewController() -> UIViewController {
         let interactor = ToDoListInteractor()
-        let viewModel = ToDoListViewModel(model: interactor.model, interactor: interactor, coordinator: self)
-        let viewController = ToDoListViewController(viewModel: viewModel)
-        interactor.bind(with: viewController) { (interactor, viewController) in
-            let viewModel = ToDoListViewModel(model: interactor.model, interactor: interactor, coordinator: self)
-            viewController.configure(with: viewModel)
-        }
-
+        let view = ToDoListView(viewModelPublisher: interactor.viewModelPublisher { ToDoListViewModel(model: $1, interactor: $0, coordinator: self)})
+        let viewController = UIHostingController(rootView: view)
         return viewController
     }
 }

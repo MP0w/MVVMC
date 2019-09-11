@@ -14,7 +14,7 @@
 		F8DF99162271C00700B68009 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF99152271C00700B68009 /* ToDo.swift */; };
 		F8DF99182271C04C00B68009 /* MVVMÇ.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF99172271C04C00B68009 /* MVVMÇ.swift */; };
 		F8DF991D2271C09A00B68009 /* ToDoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF99192271C09A00B68009 /* ToDoListCoordinator.swift */; };
-		F8DF991E2271C09A00B68009 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF991A2271C09A00B68009 /* ToDoListViewController.swift */; };
+		F8DF991E2271C09A00B68009 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF991A2271C09A00B68009 /* ToDoListView.swift */; };
 		F8DF991F2271C09A00B68009 /* ToDoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF991B2271C09A00B68009 /* ToDoListInteractor.swift */; };
 		F8DF99202271C09A00B68009 /* ToDoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF991C2271C09A00B68009 /* ToDoListViewModel.swift */; };
 		F8DF99222271C0A900B68009 /* LoadableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF99212271C0A900B68009 /* LoadableModel.swift */; };
@@ -42,7 +42,7 @@
 		F8DF99152271C00700B68009 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		F8DF99172271C04C00B68009 /* MVVMÇ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MVVMÇ.swift"; path = "../../MVVMÇ.swift"; sourceTree = "<group>"; };
 		F8DF99192271C09A00B68009 /* ToDoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListCoordinator.swift; sourceTree = "<group>"; };
-		F8DF991A2271C09A00B68009 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
+		F8DF991A2271C09A00B68009 /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
 		F8DF991B2271C09A00B68009 /* ToDoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListInteractor.swift; sourceTree = "<group>"; };
 		F8DF991C2271C09A00B68009 /* ToDoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewModel.swift; sourceTree = "<group>"; };
 		F8DF99212271C0A900B68009 /* LoadableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableModel.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 				F8DF99212271C0A900B68009 /* LoadableModel.swift */,
 				F8DF99152271C00700B68009 /* ToDo.swift */,
 				F8DF99192271C09A00B68009 /* ToDoListCoordinator.swift */,
-				F8DF991A2271C09A00B68009 /* ToDoListViewController.swift */,
+				F8DF991A2271C09A00B68009 /* ToDoListView.swift */,
 				F8DF991B2271C09A00B68009 /* ToDoListInteractor.swift */,
 				F8DF991C2271C09A00B68009 /* ToDoListViewModel.swift */,
 				F8DF98F42271BF8D00B68009 /* Assets.xcassets */,
@@ -216,7 +216,7 @@
 				F8DF99182271C04C00B68009 /* MVVMÇ.swift in Sources */,
 				F8DF99222271C0A900B68009 /* LoadableModel.swift in Sources */,
 				F8DF991D2271C09A00B68009 /* ToDoListCoordinator.swift in Sources */,
-				F8DF991E2271C09A00B68009 /* ToDoListViewController.swift in Sources */,
+				F8DF991E2271C09A00B68009 /* ToDoListView.swift in Sources */,
 				F8DF991F2271C09A00B68009 /* ToDoListInteractor.swift in Sources */,
 				F8DF98EE2271BF8C00B68009 /* AppDelegate.swift in Sources */,
 			);
@@ -303,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -358,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

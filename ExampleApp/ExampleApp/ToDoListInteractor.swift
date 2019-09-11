@@ -7,17 +7,16 @@
 //
 
 import Foundation
+import Combine
+import SwiftUI
 
 class ToDoListInteractor: Interactor {
+    @Published private(set) var model: LoadableModel<[ToDo]> = .none
 
-    private(set) var model: LoadableModel<[ToDo]> = .none {
-        didSet {
-            modelDidUpdate?()
-        }
+    var modelPublisher: AnyPublisher<LoadableModel<[ToDo]>, Never> {
+        return $model.eraseToAnyPublisher()
     }
-
-    var modelDidUpdate: (() -> Void)?
-
+    
     func load() {
         model = model.byStartLoading()
         // Fake load!

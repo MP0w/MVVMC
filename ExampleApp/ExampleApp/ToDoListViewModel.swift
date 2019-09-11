@@ -13,7 +13,7 @@ struct ToDoListViewModel {
     private let model: LoadableModel<[ToDo]>
     private let interactor: ToDoListInteractor
     private let coordinator: ToDoListCoordinator
-    let cellViewModels: [String]?
+    let cellViewModels: [String]
 
     var title: String {
         return "ToDo"
@@ -31,7 +31,7 @@ struct ToDoListViewModel {
         
         cellViewModels = model.value?.flatMap {
             return [$0.name] + ($0.subTasks?.map { " - \($0.name)" } ?? [])
-        }
+        } ?? []
     }
     
     func load() {

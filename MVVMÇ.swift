@@ -1,31 +1,44 @@
 import Foundation
 import UIKit
+import Combine
 
 protocol Interactor: class {
     associatedtype ModelType
-
     var model: ModelType { get }
-    var modelDidUpdate: (() -> Void)? { get set }
+    var modelPublisher: AnyPublisher<ModelType, Never> { get }
 }
 
-protocol UpdateableView: class {
+protocol UpdateableView {
     associatedtype ViewModelType
 
-    init(viewModel: ViewModelType)
+    var viewModelPublisher: ViewModelPublisher<ViewModelType> { get }
+}
 
-    func configure(with viewModel: ViewModelType)
+extension UpdateableView {
+    var viewModel: ViewModelType {
+        return viewModelPublisher.viewModel
+    }
 }
 
 // MARK: Binding
 extension Interactor {
-    func bind<T: UpdateableView>(with viewController: T, factory: @escaping (_ interactor: Self, _ vc: T) -> Void) {
-        modelDidUpdate = { [weak self, weak viewController] in
-            guard let interactor = self, let viewController = viewController else {
-                return
-            }
+    func viewModelPublisher<T>(_ factory: @escaping (_ interactor: Self, ModelType) -> T) -> ViewModelPublisher<T> {
+        return ViewModelPublisher(
+            initialValue: factory(self, model),
+            publisher: AnyPublisher<T, Never>(modelPublisher.map { factory(self, $0) })
+        )
+    }
+}
 
-            factory(interactor, viewController)
-        }
+class ViewModelPublisher<T>: ObservableObject {
+    @Published var viewModel: T
+    private var cancellable: Any?
+
+    init(initialValue: T, publisher: AnyPublisher<T, Never>) {
+        self.viewModel = initialValue
+        self.cancellable = publisher.sink(receiveValue: { [unowned self] viewModel in
+            self.viewModel = viewModel
+        })
     }
 }
 
